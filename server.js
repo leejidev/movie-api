@@ -8,7 +8,7 @@ const app = express();
 // TODO 1: port와 clientOrigin을 환경 변수에서 읽습니다.
 const port = Number(process.env.PORT || 4000);
 // TODO 2: clientOrigin을 CORS 허용 출처로 사용합니다.
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: process.env.CLIENT_ORIGIN }));
 app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/movies", moviesRouter);
